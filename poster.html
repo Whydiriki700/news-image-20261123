@@ -1,153 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title>The World in One Image — Monday 23 November 2026</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1024px; height: 1024px; }
   body {
-    background: #ede5d0;
-    color: #1a1917;
-    font-family: "Noto Sans", sans-serif;
-    padding: 22px 40px 18px 40px;
+    background: #f6efdc;
+    color: #16130e;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+  }
+  .page {
+    width: 1024px; height: 1024px;
+    padding: 22px 28px 18px;
     display: flex; flex-direction: column;
+    background: #f6efdc;
+    border: 3px solid #16130e;
   }
   .kicker {
-    text-align: center; font-size: 17px; font-weight: 700;
-    letter-spacing: 6px; color: #8a7a5c; text-transform: uppercase;
-  }
-  .mastrow {
-    display: flex; align-items: stretch; gap: 18px; margin-top: 6px;
-    border-bottom: 5px double #1a1917; padding-bottom: 8px;
-  }
-  .ear {
-    width: 148px; border: 1.5px solid #1a1917; padding: 5px 8px 4px 8px;
-    text-align: center; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px;
-    line-height: 1.35; text-transform: uppercase; color: #4a4741;
-    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: #7a1f1a; font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #16130e;
   }
   .masthead {
-    flex: 1; text-align: center; font-family: "Noto Serif", serif; font-weight: 900;
-    font-size: 36px; line-height: 1.04; letter-spacing: 0.5px; white-space: nowrap;
-    display: flex; align-items: center; justify-content: center;
+    display: grid; grid-template-columns: 168px 1fr 168px;
+    gap: 14px; align-items: stretch;
+    padding: 12px 0 10px;
+    border-bottom: 3px double #16130e;
   }
-  .dateline {
-    margin-top: 8px; background: #1a1917; color: #ede5d0;
-    text-align: center; font-size: 27px; font-weight: 800; letter-spacing: 5px;
-    padding: 5px 0 6px 0;
+  .sidebox {
+    border: 1.5px solid #16130e; padding: 9px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px; line-height: 1.45; text-align: center;
+    display: flex; flex-direction: column; justify-content: center; gap: 4px;
   }
-  .dateline .dot { color: #c8402f; }
+  .sidebox b { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+  .sidebox .gold { color: #8a6d1b; font-weight: 700; }
+  .title {
+    text-align: center; line-height: 0.95;
+    font-size: 64px; font-weight: 900; letter-spacing: -1px;
+  }
+  .title span { display: block; font-size: 64px; }
+  .title em { font-style: normal; color: #7a1f1a; }
+  .datebar {
+    background: #16130e; color: #f6efdc;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; font-size: 13px; letter-spacing: 2.5px;
+    text-transform: uppercase; font-weight: 700;
+    padding: 7px 10px; margin: 10px 0 12px;
+  }
+  .datebar i { color: #d92b1f; font-style: normal; padding: 0 8px; }
   .lead {
-    display: flex; gap: 26px; margin-top: 12px;
-    border-bottom: 3px solid #1a1917; padding-bottom: 10px;
+    display: grid; grid-template-columns: 1.55fr 1fr; gap: 16px;
+    padding-bottom: 12px; border-bottom: 2px solid #16130e;
   }
-  .lead-text { flex: 1.25; }
-  .lead-art { flex: 1; }
-  .tag {
-    font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #8c2d28;
-    text-transform: uppercase;
+  .label {
+    font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+    letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800;
+    color: #7a1f1a;
   }
-  .lead h1 {
-    font-family: "Noto Serif", serif; font-weight: 900; font-size: 35px;
-    line-height: 1.12; margin-top: 7px;
+  .label .gold { color: #8a6d1b; }
+  .headline {
+    font-size: 38px; line-height: 1.02; font-weight: 900;
+    margin: 6px 0 8px; letter-spacing: -0.5px;
   }
-  .lead p { font-size: 18.5px; line-height: 1.3; margin-top: 9px; color: #2c2619; }
+  .headline em { font-style: normal; color: #7a1f1a; }
+  .standfirst {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.5px; line-height: 1.5; color: #2b261d;
+  }
+  .standfirst b { color: #16130e; }
+  .bigstat {
+    display: flex; gap: 10px; margin-top: 10px;
+  }
+  .stat {
+    flex: 1; border-top: 2px solid #7a1f1a; padding-top: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .stat strong { display: block; font-size: 20px; color: #7a1f1a; }
+  .stat span { font-size: 10.5px; line-height: 1.35; display: block; color: #3a332a; }
+  .chart {
+    background: #16130e; color: #f6efdc; padding: 12px 12px 10px;
+    display: flex; flex-direction: column;
+  }
+  .chart .label { color: #e8c15a; }
+  .chart h3 { font-size: 22px; line-height: 1.05; margin: 5px 0 6px; }
+  .chart svg { width: 100%; height: 118px; display: block; }
+  .chartnums {
+    display: flex; gap: 10px; margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .chartnums div { flex: 1; border-top: 1px solid #6b6255; padding-top: 6px; }
+  .chartnums strong { display: block; font-size: 19px; color: #e8c15a; }
+  .chartnums span { font-size: 10.5px; color: #d8d0bd; line-height: 1.3; display: block; }
   .grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
-    margin-top: 2px; flex: 1;
+    flex: 1; margin-top: 2px;
   }
-  .panel { padding: 8px 16px 5px 16px; border-bottom: 1.5px solid #c9bea3; }
-  .panel:nth-child(3n+1) { padding-left: 2px; }
-  .panel:nth-child(3n) { padding-right: 2px; }
-  .panel:nth-child(3n+2) { border-left: 1.5px solid #c9bea3; border-right: 1.5px solid #c9bea3; }
-  .panel .head { display: flex; align-items: center; gap: 9px; }
-  .panel h2 {
-    font-family: "Noto Serif", serif; font-weight: 800; font-size: 20.5px;
-    line-height: 1.16; margin-top: 6px;
+  .cell {
+    padding: 11px 12px 9px; border-right: 1px solid #b8ab8c;
+    border-bottom: 1px solid #b8ab8c;
   }
-  .panel p { font-size: 15.5px; line-height: 1.27; margin-top: 5px; color: #2c2619; }
-  .strip {
-    margin-top: 8px; background: #1a1917; color: #ede5d0; padding: 10px 18px 11px 18px;
+  .cell:nth-child(3n) { border-right: none; }
+  .cell:nth-child(n+4) { border-bottom: none; }
+  .cell .label { font-size: 10px; }
+  .cell h3 { font-size: 17px; line-height: 1.12; margin: 5px 0 6px; font-weight: 800; }
+  .cell p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11.5px; line-height: 1.45; color: #2b261d;
   }
-  .strip .row { font-size: 17.5px; line-height: 1.35; }
-  .strip .row + .row { margin-top: 5px; }
-  .strip b { color: #e8b64c; letter-spacing: 1.5px; }
+  .also {
+    background: #16130e; color: #f6efdc; margin-top: 12px;
+    padding: 10px 14px 11px;
+  }
+  .also h2 {
+    font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase; color: #e8c15a;
+    text-align: center; margin-bottom: 8px;
+  }
+  .also h2 i { color: #d92b1f; font-style: normal; padding: 0 6px; }
+  .also .items {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 16px;
+    font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; line-height: 1.4;
+  }
+  .also .items b { color: #fff; }
+  .also .items span { color: #d8d0bd; }
+  .foot {
+    display: flex; justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif; font-size: 9.5px;
+    letter-spacing: 1.5px; text-transform: uppercase; color: #6b6255;
+    padding-top: 8px;
+  }
 </style>
 </head>
 <body>
-  <div class="kicker">World news · One day · One image</div>
-  <div class="mastrow">
-    <div class="ear">Final edition<br>All the day<br>in one page</div>
-    <div class="masthead">THE WORLD IN ONE IMAGE</div>
-    <div class="ear">Vol. I · No. 23<br>Late city<br>edition</div>
+<div class="page">
+  <div class="kicker">World news, satu hari, satu gambar</div>
+
+  <div class="masthead">
+    <div class="sidebox">
+      <b>Final Edition</b>
+      <span>Edisi final</span>
+      <span>Semua berita hari itu dalam satu halaman</span>
+      <span class="gold">All the day&rsquo;s news on one page</span>
+    </div>
+    <div class="title"><span>THE WORLD</span><span>IN <em>ONE</em> IMAGE</span></div>
+    <div class="sidebox">
+      <b>Vol. 1 &mdash; No. 23</b>
+      <span>Volume 1 &middot; Nomor 23</span>
+      <span>Late City Edition</span>
+      <span class="gold">Edisi kota larut</span>
+    </div>
   </div>
-  <div class="dateline">MONDAY <span class="dot">·</span> 23 NOVEMBER 2026</div>
+
+  <div class="datebar">Senin<i>&bull;</i>23 November 2026<i>&bull;</i>Monday<i>&bull;</i>23 November 2026</div>
 
   <div class="lead">
-    <div class="lead-text">
-      <div class="tag">Markets · Wall Street</div>
-      <h1>Huang back at Nvidia, shares soar 31% in best day since 2003</h1>
-      <p>Nvidia's board reinstated Jensen Huang as chief executive 11 days after his resignation, sending the stock up 31% and adding $952 billion in value. The Nasdaq jumped 6.5% and the S&P 500 4.7%, their best day since April 2025.</p>
+    <div>
+      <div class="label">Markets <span class="gold">&middot;</span> Wall Street &middot; Pasar</div>
+      <h2 class="headline">Huang is back at Nvidia &mdash; and the stock <em>soars 31%</em></h2>
+      <p class="standfirst">Jensen Huang returns to Nvidia and Wall Street answers in a single session: shares jump <b>31%</b>, the best day since <b>2003</b>, adding <b>$952 billion</b> in value. The Nasdaq climbs <b>6.5%</b> and the S&amp;P 500 rises <b>4.7%</b>, the best day for both since April 2025.</p>
+      <div class="bigstat">
+        <div class="stat"><strong>+$952bn</strong><span>value added in one day</span></div>
+        <div class="stat"><strong>31%</strong><span>NVDA, best day since 2003</span></div>
+        <div class="stat"><strong>+6.5%</strong><span>Nasdaq, best since April 2025</span></div>
+      </div>
     </div>
-    <div class="lead-art">
-      <svg width="100%" height="194" viewBox="0 0 400 218" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="0" width="400" height="218" fill="#141c26"/>
-        <g stroke="#2c3a4a" stroke-width="1">
-          <path d="M0 54 L400 54"/><path d="M0 108 L400 108"/>
-          <path d="M0 162 L400 162"/>
-          <path d="M66 0 L66 218"/><path d="M133 0 L133 218"/>
-          <path d="M200 0 L200 218"/><path d="M266 0 L266 218"/>
-          <path d="M333 0 L333 218"/>
-        </g>
-        <path d="M0 60 C 60 66, 110 78, 160 96 C 200 110, 230 132, 258 168 C 290 198, 340 190, 400 176 L400 218 L0 218 Z" fill="#1d2a38"/>
-        <path d="M0 150 C 90 140, 170 148, 240 132 C 300 118, 350 122, 400 108 L400 0 L0 0 Z" fill="#1d2a38"/>
-        <path d="M12 118 L72 124 L128 138 L178 152 L228 176 L258 188 L300 128 L340 84 L388 34" fill="none" stroke="#e8b64c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="258" cy="188" r="5" fill="#c8402f"/>
-        <circle cx="258" cy="188" r="11" fill="none" stroke="#c8402f" stroke-width="2"/>
-        <circle cx="388" cy="34" r="5" fill="#e8b64c"/>
-        <circle cx="388" cy="34" r="11" fill="none" stroke="#e8b64c" stroke-width="2"/>
-        <text x="20" y="36" font-family="Noto Sans, sans-serif" font-size="24" font-weight="800" fill="#f6f1e6">THE GREAT REBOUND</text>
-        <text x="20" y="62" font-family="Noto Sans, sans-serif" font-size="16" font-weight="700" fill="#e8b64c">NVDA +31% · NASDAQ +6.5%</text>
+    <div class="chart">
+      <div class="label">The Big Comeback &middot; Kebangkitan Besar</div>
+      <h3>A line that only knows up.</h3>
+      <svg viewBox="0 0 320 118" preserveAspectRatio="none" aria-label="Rising chart">
+        <line x1="0" y1="106" x2="320" y2="106" stroke="#6b6255" stroke-width="1"/>
+        <line x1="0" y1="12" x2="0" y2="106" stroke="#6b6255" stroke-width="1"/>
+        <polyline points="8,102 52,96 96,88 138,74 182,68 224,44 268,28 312,10" fill="none" stroke="#e8c15a" stroke-width="3"/>
+        <polyline points="8,102 52,96 96,88 138,74 182,68 224,44 268,28 312,10" fill="none" stroke="#d92b1f" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+        <circle cx="312" cy="10" r="5" fill="#d92b1f"/>
+        <text x="10" y="22" fill="#d8d0bd" font-size="11" font-family="Arial">OPEN</text>
+        <text x="252" y="34" fill="#f6efdc" font-size="11" font-family="Arial" font-weight="bold">CLOSE +31%</text>
       </svg>
+      <div class="chartnums">
+        <div><strong>NVDA +31%</strong><span>best day since 2003</span></div>
+        <div><strong>NASDAQ +6.5%</strong><span>best day since April 2025</span></div>
+      </div>
     </div>
   </div>
 
   <div class="grid">
-    <div class="panel">
-      <div class="tag">War · Libya</div>
-      <h2>Ukraine sinks Russian warship off Libya</h2>
-      <p>Sea drones sank the Russian corvette Merkury at Benghazi port, Zelenskyy said, striking a second Russian ship too and carrying the war far beyond Europe's shores.</p>
+    <div class="cell">
+      <div class="label">War &middot; Libya &middot; Perang</div>
+      <h3>Sea drones sink a Russian corvette far from Europe</h3>
+      <p>Ukrainian sea drones sink the Russian corvette Merkury in the port of Benghazi, President Zelenskyy says. A second Russian ship is also hit, carrying the war far beyond Europe.</p>
     </div>
-    <div class="panel">
-      <div class="tag">Climate · Antalya</div>
-      <h2>COP31 talks collapse with no deal</h2>
-      <p>The UN climate summit ended two days past its deadline with no agreement, the longest climate conference in history, split over fossil fuels and money.</p>
+    <div class="cell">
+      <div class="label">Climate &middot; Antalya &middot; Iklim</div>
+      <h3>COP31 collapses with no deal</h3>
+      <p>Climate talks in Antalya fall apart without an agreement, ending two days past deadline as the longest climate conference in history, split over fossil fuels and money.</p>
     </div>
-    <div class="panel">
-      <div class="tag">Diplomacy · Shenzhen</div>
-      <h2>Trump calls Putin 'my friend' after summit</h2>
-      <p>Trump met Putin and Xi Jinping in Shenzhen and praised the Russian president, as the White House pressed for a deal to end the war in Ukraine.</p>
+    <div class="cell">
+      <div class="label">Diplomacy &middot; Shenzhen &middot; Diplomasi</div>
+      <h3>Trump calls Putin &ldquo;my friend&rdquo; after the summit</h3>
+      <p>Trump meets Putin and Xi Jinping in Shenzhen and calls Putin his friend, as the White House presses for a deal to end the war in Ukraine.</p>
     </div>
-    <div class="panel">
-      <div class="tag">Politics · Washington</div>
-      <h2>Democrats win largest House majority since 1992</h2>
-      <p>Democrats won at least 258 House seats, flipping a North Carolina seat to secure their biggest majority in the chamber in 34 years.</p>
+    <div class="cell">
+      <div class="label">Politics &middot; Washington &middot; Politik</div>
+      <h3>Democrats take at least 258 House seats</h3>
+      <p>Democrats win at least 258 seats in the House, flipping one North Carolina seat, for the largest House majority in 34 years, since 1992.</p>
     </div>
-    <div class="panel">
-      <div class="tag">Justice · Sinaloa</div>
-      <h2>'El Chapo Isidro' captured, 16 killed in raid</h2>
-      <p>Special forces seized cartel boss Fausto Isidro Meza Flores in Sinaloa with US intelligence help. Sixteen suspected cartel members died in the operation.</p>
+    <div class="cell">
+      <div class="label">Justice &middot; Sinaloa &middot; Keadilan</div>
+      <h3>Cartel boss El Chapo Isidro captured</h3>
+      <p>Special forces capture cartel boss Fausto Isidro Meza Flores, known as El Chapo Isidro, with help from US intelligence. Sixteen cartel members are killed in the operation.</p>
     </div>
-    <div class="panel">
-      <div class="tag">Conflict · Gulf</div>
-      <h2>Iran vows 'all means' against US blockade</h2>
-      <p>Tehran said it would use all means to counter the US naval blockade and claimed to shoot down a US drone, as explosions were reported in the Strait of Hormuz.</p>
+    <div class="cell">
+      <div class="label">Conflict &middot; The Gulf &middot; Konflik</div>
+      <h3>Iran vows to fight a US sea blockade</h3>
+      <p>Iran vows to use every means against a US sea blockade and claims to have shot down a US drone, as explosions are reported in the Strait of Hormuz.</p>
     </div>
   </div>
 
-  <div class="strip">
-    <div class="row"><b>ALSO MONDAY</b> · India pledges $1.63 billion to rebuild Nepal after deadly glacier flood · EU proposes 22nd sanctions package against Russia · UK and EU sign reconciliation deal a decade after Brexit</div>
-    <div class="row">Russian strike on Dymer apartment block kills at least 11 · Australian music legend Molly Meldrum dies aged 83 · EU validates data breach after cyberattack, warns of more disruption</div>
+  <div class="also">
+    <h2>Also Monday <i>&bull;</i> Juga Hari Senin</h2>
+    <div class="items">
+      <div><b>India pledges $1.63bn</b> <span>to rebuild Nepal after a deadly glacier flood.</span></div>
+      <div><b>EU proposes a 22nd sanctions package</b> <span>against Russia.</span></div>
+      <div><b>UK and EU sign a reconciliation deal</b> <span>a decade after Brexit.</span></div>
+      <div><b>Russian strike on a Dymer apartment block</b> <span>kills at least 11 people.</span></div>
+      <div><b>Molly Meldrum dies at 83,</b> <span>the Australian music legend.</span></div>
+      <div><b>EU confirms a data breach</b> <span>after a cyberattack and warns of further disruption.</span></div>
+    </div>
   </div>
+
+  <div class="foot"><span>The World in One Image</span><span>Monday 23 November 2026</span><span>Vol. 1 &mdash; No. 23</span></div>
+</div>
 </body>
 </html>
