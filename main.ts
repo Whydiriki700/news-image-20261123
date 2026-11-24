@@ -9,6 +9,7 @@
 // PNG, no side over 1024 px, total size at most 1 MiB, and its IEND trailer
 // present, then copies it byte for byte to the output directory so the
 // grader sees exactly the bytes in this repository.
+// Final page committed 24 November 2026: entry.png now holds the full Monday front page.
 
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
